@@ -1,0 +1,20 @@
+    <%- include('partials/header.ejs'); %>
+
+    <h1>Home</h1>
+    <p> <%= HC %> </p>
+
+    <%# creating a loop for list of blogs on the home page %>
+    <% if (homecontent.length > 1) { %>
+      <% for (i=1; i<homecontent.length; i++) { %>
+        <h1> <%=  homecontent[i].blogPostTitle %> </h1>
+        <% if (homecontent[i].blogPostBody.length <= 30) { %>
+          <p> <%= homecontent[i].blogPostBody %> </p>
+        <% } else { %>
+        <p>  <%=  homecontent[i].blogPostBody.substring(0,30) %> ... <a href="/posts/<%=homecontent[i].blogPostTitle%>">Read more</a></p>
+        <% } %> 
+    <% }} %>
+    <%# end of loop %>
+    <!-- new comment just to make changes -->
+
+
+    <%- include('partials/footer.ejs'); %>

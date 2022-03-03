@@ -1,0 +1,46 @@
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+
+/* .footer-padding {
+	padding-bottom: 60px;
+} */
+
+.footer {
+	position: static;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #1abc9c;
+}
+
+.footer p {
+	padding-top: 30px;
+	font-size: 12px;
+  color: #fff;
+}
+
+.form-control{
+  margin-bottom: 15px;
+}
+
+.wrapper { /*this is basically being used to push the footer down at the bottom since the  */
+  /* length of the content changes when you add to the home page with ejs. There is no position property that can give the footer like it should be  */
+ /* This is a custom class I created not a bootstrap class, you can name it anything */
+  min-height: calc(100vh - 150px);
+  /* vh sets height according to initial viewport and 150px is just the combined height of header and footer section for this particular project */
+}
