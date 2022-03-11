@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body{
   background-color: #181A1B;
   color: #fff;
@@ -7,7 +12,7 @@ footer{
 }
 .header-img{
   width: 1347px;
-  height: 563px;
+  height: 90vh;
 }
 .container-fluid {
     padding-top: 70px;
@@ -16,34 +21,70 @@ footer{
 .navbar {
     padding-top: 15px;
     padding-bottom: 15px;
+    height: 10vh;
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
-    background-color: #1C1E1F;
+    background-color: #000000;
+}
+
+.navbar-nav  li{
+  margin-left: 1rem;
+  border-style: solid;
+  border-color:#9136F7;
+  border-width: 1px;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1.2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.navbar-nav li:after{
+  width: 0;
+  height: 0;
+  content: " ";
+  position: absolute;
+  border-radius: 100%;
+  background: #9136F7;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-nav  li:after {
+  transition: all 325ms ease-in;
+}
+
+.navbar-nav  li:hover:after{
+width: 200px;
+height: 200px;
+border-radius: 4px;
 }
 
 .navbar-nav  li a{
   color: #9136F7 !important;
+  text-decoration: none !important;
+  z-index: 1;
+  transition: all 325ms ease-in;
 }
-.navbar-nav  li a:hover {
+.navbar-nav  li:hover > a {
     color: #fff !important;
 }
 .navbar-brand::before{
  content: "Dev";
  color: #9136F7;
-
  font-weight: bold;
+}
+.navbar-brand{
+  transition: all 325ms ease-in;
 }
 .navbar-brand:hover{
   color: #9136F7 !important;
 }
-.navigation-button{
-  background-color: transparent !important;
-  color: #9136F7 !important;
-  border-color: #9136F7 !important;
-}
+
 /* .footer-padding {
 	padding-bottom: 60px;
 } */
