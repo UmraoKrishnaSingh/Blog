@@ -3,13 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* border-box as box sizing makes so that you don't need to worry 
+about doing maths to figure out how big a box is (in terms of css - recall that
+everything as far as css is concerned - is a box) with box-sizing defined like this
+when you give padding or border width - the content inside the box will resize to accomodate
+to give the appropriate effect instead of growing outwards keeping the contents inside the same
+which is the default behaviour - for consistency you should have *:before and *:after as well
+those are two elements that are not targetted by just the wildcard selector (*) here  */
 body{
   background-color: #181A1B;
   color: #fff;
 }
-footer{
-  margin-top: 50px;
-}
+
 .header-img{
   width: 1347px;
   height: 90vh;
@@ -24,7 +29,7 @@ footer{
     height: 10vh;
     border: 0;
     border-radius: 0;
-    margin-bottom: 0;
+    margin-bottom: 15px;
     font-size: 12px;
     letter-spacing: 5px;
     background-color: #000000;
@@ -44,6 +49,12 @@ footer{
   align-items: center;
   cursor: pointer;
 }
+/* here I'm trying to make the navigation list item look like a button and act like a button. 
+So it has a border, I gave it the default bootstrap border radius for a button to keep 
+it consistent. Overflow hidden property is there to make it so that the animation I'm doing
+does not show when it goes out of bounds - so it is visible only inside the area of nav li.
+cursor pointer just turns the pointer into a hand when I hover over the li */
+
 .navbar-nav li:after{
   width: 0;
   height: 0;
@@ -53,11 +64,12 @@ footer{
   background: #9136F7;
   align-items: center;
   justify-content: center;
-}
-.navbar-nav  li:after {
   transition: all 325ms ease-in;
 }
-
+/* this element is what makes the hover animation on li element possible. Basically it just
+expands from nothingness to 200px*200px square but since the border radius is 100% it 
+increases as a ripple and then fills out the li and after that it gets hidden. 
+There are things I don't understand  about this though*/
 .navbar-nav  li:hover:after{
 width: 200px;
 height: 200px;
@@ -78,6 +90,7 @@ border-radius: 4px;
  color: #9136F7;
  font-weight: bold;
 }
+/* just for Dev thing on navbar */
 .navbar-brand{
   transition: all 325ms ease-in;
 }
@@ -85,11 +98,9 @@ border-radius: 4px;
   color: #9136F7 !important;
 }
 
-/* .footer-padding {
-	padding-bottom: 60px;
-} */
 
 .footer {
+  margin-top: 50px;
 	position: static;
 	text-align: center;
 	bottom: 0;
